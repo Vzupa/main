@@ -33,28 +33,7 @@ EOF
 fi
 
 echo "[*] Creating .tmux.conf..."
-cat << 'EOF' > ~/.tmux.conf
-set-option -g default-shell /bin/zsh
-
-set -g mouse on
-setw -g mode-keys vi
-
-unbind C-b
-set -g prefix C-a
-bind C-a send-prefix
-
-unbind '"'
-unbind %
-bind | split-window -h
-bind - split-window -v
-
-bind-key -n PageUp copy-mode -u
-bind-key -n PageDown send-keys -X page-down
-
-# TPM and plugins
-set -g @plugin 'tmux-plugins/tmux-yank'
-run '~/.tmux/plugins/tpm/tpm'
-EOF
+cp "$(dirname "$0")/tmux.config" ~/.tmux.conf
 
 echo "[*] Installing TPM..."
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm || true
