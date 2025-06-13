@@ -3,5 +3,5 @@ sudo apt update -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo
 ```
 
 ```
-sudo apt install git && git clone TODO && chmod u+x main/setup.sh %% ./main/setup.sh
+sudo apt install git && git clone https://github.com/Vzupa/main.git && chmod u+x main/setup.sh %% ./main/setup.sh
 ```
