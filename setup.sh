@@ -23,13 +23,8 @@ echo 'plugins=(git zsh-autosuggestions zsh-syntax-highlighting)' >> ~/.zshrc
 
 # Add tmux auto-start block if not present
 if ! grep -q 'tmux attach-session' ~/.zshrc; then
-cat << 'EOF' >> ~/.zshrc
-
-# Auto start tmux
-if which tmux >/dev/null && [ -z "$TMUX" ]; then
-  tmux attach-session -t default || tmux new-session -s default
-fi
-EOF
+    echo "[*] Adding tmux autostart block to .zshrc..."
+    cat "$(dirname "$0")/tmux_autostart.zsh" >> ~/.zshrc
 fi
 
 echo "[*] Creating .tmux.conf..."
