@@ -38,3 +38,5 @@ tmux source-file ~/.tmux.conf || true
 
 exec zsh
 echo "[*] Done, in tmux, press Prefix (Ctrl+A) then I to install plugins."
+
+source ~/.zshrc
