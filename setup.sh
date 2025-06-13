@@ -14,12 +14,12 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 ZSH_CUSTOM=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}
 
 echo "[*] Installing Zsh plugins..."
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
-git clone https://github.com/zsh-users/zsh-autosuggestions.git "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" || true
+git clone https://github.com/zsh-users/zsh-autosuggestions.git "$ZSH_CUSTOM/plugins/zsh-autosuggestions" || true
 
 echo "[*] Updating .zshrc..."
 sed -i '/^plugins=/d' ~/.zshrc
-echo 'plugins=(git zsh-syntax-highlighting zsh-autosuggestions)' >> ~/.zshrc
+echo 'plugins=(git zsh-autosuggestions zsh-syntax-highlighting)' >> ~/.zshrc
 
 # Add tmux auto-start block if not present
 if ! grep -q 'tmux attach-session' ~/.zshrc; then
@@ -57,10 +57,10 @@ run '~/.tmux/plugins/tpm/tpm'
 EOF
 
 echo "[*] Installing TPM..."
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm || true
 
 echo "[*] Reloading tmux config..."
 tmux source-file ~/.tmux.conf || true
 
-echo "[*] Done. Restart your shell or run 'exec zsh' to switch."
-echo "[*] In tmux, press Prefix (Ctrl+A) then I to install plugins."
+exec zsh
+echo "[*] Done, in tmux, press Prefix (Ctrl+A) then I to install plugins."
