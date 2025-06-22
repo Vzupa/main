@@ -24,11 +24,11 @@ echo 'plugins=(git zsh-autosuggestions zsh-syntax-highlighting)' >> ~/.zshrc
 # Add tmux auto-start block if not present
 if ! grep -q 'tmux attach-session' ~/.zshrc; then
     echo "[*] Adding tmux autostart block to .zshrc..."
-    cat "$(dirname "$0")/tmux_autostart.zsh" >> ~/.zshrc
+    cat "$(dirname "$0")/static/tmux_autostart.zsh" >> ~/.zshrc
 fi
 
 echo "[*] Creating .tmux.conf..."
-cp "$(dirname "$0")/tmux.config" ~/.tmux.conf
+cp "$(dirname "$0")/static/tmux.config" ~/.tmux.conf
 
 echo "[*] Installing TPM..."
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm || true
