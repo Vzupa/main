@@ -36,9 +36,9 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm || true
 echo "[*] Reloading tmux config..."
 tmux source-file ~/.tmux.conf || true
 
-
-
-exec zsh
 echo "[*] Done, in tmux, press Prefix (Ctrl+A) then I to install plugins."
 
 source ~/.zshrc
+
+exec zsh
+
