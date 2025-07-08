@@ -5,7 +5,7 @@ set -e
 
 echo "[*] Installing dependencies..."
 sudo apt update
-sudo apt install -y zsh curl git tmux xfce4-clipman xfconf
+sudo apt install -y zsh curl git tmux xclip xfconf
 
 echo "[*] Installing Oh My Zsh..."
 export RUNZSH=no
