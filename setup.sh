@@ -37,6 +37,6 @@ echo "[*] Reloading tmux config..."
 tmux source-file ~/.tmux.conf || true
 
 chmod +x "$(dirname "$0")/scripts/ssh_setup.sh"
-bash "$(dirname "$0")/ssh_setup.sh" "$1"
+bash "$(dirname "$0")/scripts/ssh_setup.sh" "$1"
 
 echo "[*] Done, in tmux, press Prefix (Ctrl+A) then I to install plugins."
