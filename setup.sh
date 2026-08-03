@@ -9,6 +9,7 @@ sudo apt install -y zsh curl git tmux xclip xfconf
 
 echo "[*] Installing Oh My Zsh..."
 export RUNZSH=no
+export CHSH=no
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 ZSH_CUSTOM=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}
